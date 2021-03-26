@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+    <title>Stencil Component Starter</title>
+
+    <link rel="stylesheet" href="/build/stencil-starter-project-name.css">
+    <script type="module" src="/build/stencil-starter-project-name.esm.js"></script>
+    <script nomodule src="/build/stencil-starter-project-name.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <h3>Modal</h3>
+      </div>
+      <div class="row space-between">
+        <button-component text="Open Modal" appearance="primary"></button-component>
+        <modal-component buttons='[{"text": "confirm"}, {"text": "cancel"}]' header="Modal Header" appearance="primary">
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nemo qui minus perferendis quia tempore atque blanditiis ipsam id exercitationem reiciendis. Repellendus, distinctio! Recusandae temporibus adipisci facilis error quod nemo eaque.
+        </modal-component>
+      </div>
+    </div>
+  </body>
+
+  <script>
+    let btn = document.querySelector('button-component');
+    let modal = document.querySelector('modal-component');
+
+    btn.addEventListener('click', () => {
+      modal.isopen = true;
+    });
+
+    modal.addEventListener('action', () => {
+      alert('Confirm Pressed');
+    });
+  </script>
+</html>
